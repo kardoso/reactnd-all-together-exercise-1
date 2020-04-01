@@ -27,6 +27,14 @@ class NewUser extends Component {
     }))
   }
 
+  fieldAreEmpty = () => {
+    return (
+      this.state.firstname === '' ||
+      this.state.lastname === '' ||
+      this.state.username === ''
+    )
+  }
+
   submitForm = () => {
     if (this.props.users.map(u => u.username).includes(this.state.username)) {
       alert('This username is already taken')
@@ -59,7 +67,11 @@ class NewUser extends Component {
           onChange={e => this.changeUsername(e.target.value)}
         />
         <br />
-        <button type="submit" onClick={this.submitForm}>
+        <button
+          type="submit"
+          onClick={this.submitForm}
+          disabled={this.fieldAreEmpty()}
+        >
           Add user
         </button>
       </div>
