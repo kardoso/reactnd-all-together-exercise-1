@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import NewUser from './Components/NewUser'
+import ListUsers from './Components/ListUsers'
 
 /*
 This exercise will help you put together and practice all of the concepts you've
@@ -30,6 +31,7 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <NewUser users={this.state.users} addUser={this.addUser} />
+        <ListUsers users={this.state.users} />
       </div>
     )
   }
