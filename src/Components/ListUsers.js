@@ -5,7 +5,10 @@ function ListUsers(props) {
   return (
     <ul>
       {props.users.map(u => (
-        <li key={u.username}>{u.username}</li>
+        <li key={u.username}>
+          <p>Username: {u.username}</p>
+          <p>Games Played:{u.gamesPlayed}</p>
+        </li>
       ))}
     </ul>
   )
